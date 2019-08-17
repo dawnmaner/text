@@ -3,7 +3,7 @@
         <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="100px" class="login-content">
             <h3>扣丁狼客户信息管理系统</h3>
             <el-form-item prop="username">
-                <el-input type="text" placeholder="请输入账号" v-model="username" autocomplete="off"></el-input>
+                <el-input type="text" placeholder="请输入账号" v-model="ruleForm.username" autocomplete="off"></el-input>
             </el-form-item>
             <el-form-item prop="pwd">
                 <el-input type="password" placeholder="请输入密码" v-model="ruleForm.pwd"
@@ -17,6 +17,8 @@
 </template>
 
 <script>
+    import request from '@/request/request'
+    import qs from 'qs'
     export default {
         name: "Login",
         data() {
@@ -34,6 +36,17 @@
         },
         methods: {
             loginFn() {
+                this.$refs['ruleForm'].validate(vali =>{
+                if(vali){
+                    console.log('成功')
+                    request.post('api/coding/tokens',qs.stringify({
+                        username:this.ruleForm.username,
+                        password:this.ruleForm.pwd
+                    })) .then(res=>{console.log(res)})
+                }else{
+                    return false
+                }
+                })
 
             }
         }
