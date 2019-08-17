@@ -17,6 +17,7 @@ export default {
 <style lang="less">
   @import "assets/style/reset";
 #app{
-
+    width: 100%;
+    height: 100%;
 }
 </style>
