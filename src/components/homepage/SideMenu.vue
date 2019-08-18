@@ -19,33 +19,19 @@
 </template>
 
 <script>
+    import {menuConfig} from "@/config/config";
+
     export default {
         name: "SideMenu",
         data(){
             return{
-                menuData:[
-                    {
-                        title:'系统管理',
-                        children:[
-                            {index:'/department',
-                                title:'部门管理'},
-                            {index:'/employee',
-                                title:'员工管理1'},
-                            {index:'3',
-                                title:'员工管理'},
-                            {index:'4',
-                                title:'员工管理'},
-
-                        ]
-                    },
-                    {title:'其它设置',}
-                ]
+                menuData: menuConfig
             }
 
         },
         computed:{
             activeRoute(){
-                return this.$route.path
+                return this.$route.meta.name
             }
 
         }

@@ -19,9 +19,14 @@ export default new VueRouter({
                     component:Login
                 },
                 {path:'department',
+                    meta:{title:'部门管理',
+                        name:'/department'},
+
                     component:Department
                 },
                 {path:'employee',
+                    meta:{title:'员工管理',
+                        name:'/employee'},
                     component:Employee
                 },
             ]
