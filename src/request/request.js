@@ -8,5 +8,5 @@ server.interceptors.request.use(
 config=>{return config},error=>{return Promise.reject(error)})
 // 请求结果返回拦截器
 server.interceptors.response.use(
-result=>{return result},error=>{return Promise.reject(error)})
+result=>{return result.data},error=>{return Promise.reject(error)})
 export default server
