@@ -1,9 +1,9 @@
 <template>
     <div class="header-wrapper">
-        <h3 class="header-title">扣丁狼管理系统</h3>
+        <h3 class="header-title">叩丁狼客户关系管理系统</h3>
         <i class="el-icon-menu header-icon"></i>
-        <el-dropdown trigger="click" class="header-user-info">
-      <span class="el-dropdown-link  header-info-txt" >
+        <el-dropdown trigger="click" class="header-userinfo">
+      <span class="el-dropdown-link header-userinfo-txt">
         下拉菜单<i class="el-icon-arrow-down el-icon--right"></i>
       </span>
             <el-dropdown-menu slot="dropdown">
@@ -24,30 +24,28 @@
 </script>
 
 <style lang="less" scoped>
-.header-wrapper{
+.header-wrapper {
     width: 100%;
     height: 70px;
-    line-height: 35px;
-    background:#409EFF;
-    .header-title{
-        float: left;
+    line-height: 70px;
+    background-color: #409EFF;
+    .header-title {
+        float:left;
         padding: 0 10px;
-        color: #ffff;
+        color: #fff;
     }
-    .header-icon{
+    .header-icon {
         float: left;
         line-height: 70px;
-        color: #ffff;
-        font-size:24px;
+        color: #fff;
+        font-size: 20px;
     }
-    .header-user-info{
-        line-height:70px;
-        float:right;
+    .header-userinfo {
+        float: right;
         margin: 0 10px;
-        .header-info-txt{
+        .header-userinfo-txt {
             color: #fff;
         }
     }
-
 }
 </style>

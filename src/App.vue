@@ -1,11 +1,20 @@
 <template>
   <div id="app">
-   <router-view>homepage</router-view>
+    <!--<img src="./assets/logo.png">-->
+    <!--<div>-->
+      <!--<p>-->
+        <!--If Element is successfully added to this project, you'll see an-->
+        <!--<code v-text="'<el-button>'"></code>-->
+        <!--below-->
+      <!--</p>-->
+      <!--<el-button>el-button</el-button>-->
+    <!--</div>-->
+    <!--<HelloWorld msg="Welcome to Your Vue.js App"/>-->
+    <router-view/>
   </div>
 </template>
 
 <script>
-
 
 export default {
   name: 'app',
@@ -16,9 +25,9 @@ export default {
 </script>
 
 <style lang="less">
-  @import "assets/style/reset";
-#app{
-    width: 100%;
-    height: 100%;
+  @import "assets/styles/reset";
+#app {
+  width: 100%;
+  height: 100%;
 }
 </style>
