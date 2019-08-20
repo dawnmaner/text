@@ -1,17 +1,17 @@
 <template>
 
     <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="100px" class="employee-form">
-        <el-form-item label="用户名" prop="pass">
-            <el-input type="password" v-model="ruleForm.pass" autocomplete="off"></el-input>
+        <el-form-item label="用户名" prop="name">
+            <el-input type="text" v-model="ruleForm.name" autocomplete="off"></el-input>
         </el-form-item>
-        <el-form-item label="密码" prop="pass">
-            <el-input type="password" v-model="ruleForm.pass" autocomplete="off"></el-input>
+        <el-form-item label="密码" prop="password">
+            <el-input type="password" v-model="ruleForm.password" autocomplete="off"></el-input>
         </el-form-item>
         <el-form-item label="验证密码" prop="checkPass">
             <el-input type="password" v-model="ruleForm.checkPass" autocomplete="off"></el-input>
         </el-form-item>
-        <el-form-item label="电子邮箱" prop="age">
-            <el-input v-model.number="ruleForm.age"></el-input>
+        <el-form-item label="电子邮箱" prop="email">
+            <el-input v-model="ruleForm.age"></el-input>
         </el-form-item>
         <el-form-item label="年龄" prop="age">
             <el-input v-model.number="ruleForm.age"></el-input>
@@ -37,19 +37,36 @@
 </template>
 
 <script>
-    import {getDepartments,getRoles} from "../../request/api";
+    import {getDepartments,getRoles,addemployees} from "../../request/api";
 
     export default {
         name: "AddEmployee",
         data() {
             return  {
                 ruleForm: {
-
+                    admin :false
                 },
                 rules: {},
                 roles: []
             }
 
+        },
+        methods:{
+            submitForm(){
+            const params={
+                name:this.ruleForm.name,
+                age:this.ruleForm.age,
+                email:this.ruleForm.email,
+                admin:this.ruleForm.admin,
+                password:this.ruleForm.password,
+                dept:{
+                    id:this.ruleForm.deptId
+                }
+            }
+                addemployees(params).then(res=>{
+
+                })
+            }
         },
         created(){
             getDepartments({

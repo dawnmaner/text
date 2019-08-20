@@ -16,7 +16,7 @@ server.interceptors.request.use(config => {
                 config.data = config.data || {}
                 config.data.token = token
             }
-            config.data = qs.stringify(config.data, {})
+            config.data = qs.stringify(config.data, {arrayFormat:'repeat',allowDots:true})
         } else if (config.method === 'delete' || config.method === 'get') {
             if (token) {
                 config.params = config.params || {}

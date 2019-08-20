@@ -27,3 +27,5 @@ export const getEmployees=(params)=>request.get
 (`${preUrl}/employees`,{params:params})
 
 export const getRoles = (params) => request.get(`${preUrl}/roles`, {params:params})
+//添加员工信息
+export const addemployees = (params) => request.post(`${preUrl}/employees`, params)
